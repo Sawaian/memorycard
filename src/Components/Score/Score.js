@@ -6,6 +6,7 @@ const Score = () => {
     useEffect(() =>{
         const tabulate = () => {
             setScore(score + 1)
+            return;
         }
 
     
@@ -26,6 +27,7 @@ const Score = () => {
             top: "50%",
         }}
         >
+            <button> </button>
               Your score is {score}
       </div>
     </div>
