@@ -27,7 +27,7 @@ const Score = () => {
             top: "50%",
         }}
         >
-            <button> </button>
+            <button> Click for high score</button>
               Your score is {score}
       </div>
     </div>
