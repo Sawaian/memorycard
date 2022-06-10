@@ -42,7 +42,7 @@ const CharacterImage = () => {
             else {
                 //shallow merge charClickedArray
                 
-                setCharClick([...charClick, character])
+                setCharClick([...charClicked, character])
                 
                 setScore(score + 1);
 
@@ -55,10 +55,10 @@ const CharacterImage = () => {
            
         }
 
-        useEffect(()=>{
+        useEffect(()=>
             //shuffles the images every click. 
-            setCharArray(shuffle(charArray),[]);
-        });
+            setCharArray(shuffle(charArray),[])
+        );
 
     return(
         <div>
