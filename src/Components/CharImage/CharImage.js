@@ -20,7 +20,7 @@ const shuffle = (array) => {
 
 const CharacterImage = () => {
     //array of images
-    const [charArray, setCharArray] =  useState([1,2,3]);
+    const [charArray, setCharArray] =  useState([1,2,3,4,5,6,7,8]);
     // Checks to see if clicked
     const [charClicked, setCharClick] = useState([]);
     // Holds the score
@@ -28,11 +28,23 @@ const CharacterImage = () => {
     // Holds the high score
     const [highScore, setHighScore] = useState(0);
 
-    
+    function isScoreHigher(){
+
+        if(score >= highScore){
+
+            setHighScore(score);
+
+        }
+            
+    }
     
         //Checks to see if image is clicked.
         const charClick = (character) => {
+            
             if(charClicked.includes(character)){
+
+                isScoreHigher();
+               
                 //if it is clicked, reset score.
                 setScore(0);
                 //clears the array which hold checked image.
@@ -46,14 +58,13 @@ const CharacterImage = () => {
                 
                 setScore(score + 1);
 
-                if(score > highScore){
+                isScoreHigher();
 
-                    setHighScore(score);
-
-                }
             }
            
         }
+
+        
 
         useEffect(()=>
             //shuffles the images every click. 

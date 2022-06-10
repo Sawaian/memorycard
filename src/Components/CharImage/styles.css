@@ -11,7 +11,7 @@ h1 {
     display: flex;
     flex-flow: row-wrap;
     justify-content: space-between;
-    width: 680px;
+    width: 1000px;
 }
 
 
