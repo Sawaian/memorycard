@@ -30,7 +30,7 @@ const CharacterImage = () => {
 
     function isScoreHigher(){
 
-        if(score >= highScore){
+        if(score > highScore){
 
             setHighScore(score);
 
@@ -43,7 +43,6 @@ const CharacterImage = () => {
             
             if(charClicked.includes(character)){
 
-                isScoreHigher();
                
                 //if it is clicked, reset score.
                 setScore(0);
@@ -58,9 +57,9 @@ const CharacterImage = () => {
                 
                 setScore(score + 1);
 
-                isScoreHigher();
-
             }
+
+            isScoreHigher();
            
         }
 
