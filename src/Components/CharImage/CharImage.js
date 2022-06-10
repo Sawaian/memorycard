@@ -5,12 +5,14 @@ clicks an image they haven't clicked yet.
 
 import React, {useEffect, useState } from  "react";
 
+import "./styles.css";
+
 // This will create an array of the characters. Whenever the Array is clicked on, it'll store of the index value is true or false
 
 
 const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--){
-        const j = Math.floor.floor(Math.random() * (i + 1));
+        const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
@@ -18,7 +20,7 @@ const shuffle = (array) => {
 
 const CharacterImage = () => {
     //array of images
-    const [charArray, setCharArray] =  useState([1]);
+    const [charArray, setCharArray] =  useState([1,2,3]);
     // Checks to see if clicked
     const [charClicked, setCharClick] = useState([]);
     // Holds the score
@@ -54,23 +56,15 @@ const CharacterImage = () => {
         }
 
         useEffect(()=>{
-            //shuffles the images every click.
+            //shuffles the images every click. 
             setCharArray(shuffle(charArray),[]);
         });
 
     return(
         <div>
-       <div
-        id = "character"
-        style={{
-            color: "black",
-            width: "100px",
-            height: "100px",
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-        }}
+       <div id = "character"
         >
+            <h1>Score: {score} ({highScore})</h1>
             <div className="charContainer">
                 {
                     charArray.map((image)=> (
