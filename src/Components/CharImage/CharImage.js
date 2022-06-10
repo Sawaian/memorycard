@@ -3,7 +3,7 @@ The image order changes and the score is adjusted each time the player
 clicks an image they haven't clicked yet.
 */
 
-import React, {useState, useEffect } from  "react";
+import React, {useEffect, useState } from  "react";
 
 // This will create an array of the characters. Whenever the Array is clicked on, it'll store of the index value is true or false
 
@@ -18,7 +18,7 @@ const shuffle = (array) => {
 
 const CharacterImage = () => {
     //array of images
-    const [charArray, setCharArray] =  useState(["vulkan.jpg"]);
+    const [charArray, setCharArray] =  useState([1]);
     // Checks to see if clicked
     const [charClicked, setCharClick] = useState([]);
     // Holds the score
@@ -27,7 +27,7 @@ const CharacterImage = () => {
     const [highScore, setHighScore] = useState(0);
 
     
-    useEffect(() =>{
+    
         //Checks to see if image is clicked.
         const charClick = (character) => {
             if(charClicked.includes(character)){
@@ -50,13 +50,14 @@ const CharacterImage = () => {
 
                 }
             }
-            //shuffles the images every click.
-            setCharArray(shuffle(charArray));
+           
         }
 
-        setCharArray(shuffle(charArray));
+        useEffect(()=>{
+            //shuffles the images every click.
+            setCharArray(shuffle(charArray),[]);
+        });
 
-    })
     return(
         <div>
        <div
